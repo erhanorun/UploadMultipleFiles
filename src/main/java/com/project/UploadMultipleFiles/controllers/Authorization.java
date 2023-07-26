@@ -50,7 +50,6 @@ public class Authorization {
                     .body(new MessageResponse("Error: Username is already taken!"));
         }
 
-        // Create new user's account
         UserEntity userEntity = new UserEntity(signUpRequest.getUsername(),
                 encoder.encode(signUpRequest.getPassword()));
         userRepository.save(userEntity);
