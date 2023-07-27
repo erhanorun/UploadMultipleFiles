@@ -17,13 +17,13 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/auth")
 public class Authorization {
-    AuthenticationManager authenticate;
+    AuthenticationManager authenticationManager;
     UserRepository userRepository;
     PasswordEncoder passwordEncoder;
     JwtUtils jwtUtils;
 
-    public Authorization(AuthenticationManager authenticate, UserRepository userRepository, PasswordEncoder passwordEncoder, JwtUtils jwtUtils) {
-        this.authenticate = authenticate;
+    public Authorization(AuthenticationManager authenticationManager, UserRepository userRepository, PasswordEncoder passwordEncoder, JwtUtils jwtUtils) {
+        this.authenticationManager = authenticationManager;
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtUtils = jwtUtils;
@@ -32,7 +32,7 @@ public class Authorization {
     @PostMapping("/login")
     public String generateToken(@Valid @RequestBody LoginRequest authRequest) throws Exception {
         try {
-            authenticate.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
         } catch (Exception ex) {
             throw new Exception("invalid username/password");
         }
@@ -51,7 +51,7 @@ public class Authorization {
         }
 
         UserEntity userEntity = new UserEntity(signUpRequest.getUsername(),
-                encoder.encode(signUpRequest.getPassword()));
+                passwordEncoder.encode(signUpRequest.getPassword()));
         userRepository.save(userEntity);
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }
