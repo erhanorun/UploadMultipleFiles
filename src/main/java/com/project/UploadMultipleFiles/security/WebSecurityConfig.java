@@ -32,8 +32,8 @@ public class WebSecurityConfig {
     };
 
     UserDetailsServiceImpl userDetailsServiceImpl;
-    private AuthTokenFilter authTokenFilter;
-    private AuthEntryPointJwt authEntryPointJwt;
+    private final AuthTokenFilter authTokenFilter;
+    private final AuthEntryPointJwt authEntryPointJwt;
 
     public WebSecurityConfig(UserDetailsServiceImpl userDetailsServiceImpl, AuthTokenFilter authTokenFilter, AuthEntryPointJwt authEntryPointJwt) {
         this.userDetailsServiceImpl = userDetailsServiceImpl;

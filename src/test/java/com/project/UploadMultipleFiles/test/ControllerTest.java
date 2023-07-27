@@ -2,10 +2,8 @@ package com.project.UploadMultipleFiles.test;
 
 import com.project.UploadMultipleFiles.requests.LoginRequest;
 import com.project.UploadMultipleFiles.requests.SignUpRequest;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockMultipartFile;
@@ -21,8 +19,11 @@ import static org.junit.Assert.assertTrue;
 @AutoConfigureMockMvc
 public class ControllerTest extends AbstractTest {
 
-    @Autowired
-    MockMvc mockMvc;
+    private final MockMvc mockMvc;
+
+    public ControllerTest(MockMvc mockMvc) {
+        this.mockMvc = mockMvc;
+    }
 
     @Override
     @Before

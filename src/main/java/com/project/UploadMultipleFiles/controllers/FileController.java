@@ -17,8 +17,8 @@ import java.util.stream.Collectors;
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class FileController {
-    FileRepository fileRepository;
-    FileService fileService;
+    private final FileRepository fileRepository;
+    private final FileService fileService;
 
     public FileController(FileRepository fileRepository, FileService fileService) {
         this.fileRepository = fileRepository;

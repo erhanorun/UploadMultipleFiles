@@ -18,8 +18,8 @@ import java.io.IOException;
 @Component
 public class AuthTokenFilter extends OncePerRequestFilter {
 
-    private JwtUtils jwtUtils;
-    private UserDetailsServiceImpl userDetailsServiceImpl;
+    private final JwtUtils jwtUtils;
+    private final UserDetailsServiceImpl userDetailsServiceImpl;
 
     public AuthTokenFilter(JwtUtils jwtUtils, UserDetailsServiceImpl userDetailsServiceImpl) {
         this.jwtUtils = jwtUtils;

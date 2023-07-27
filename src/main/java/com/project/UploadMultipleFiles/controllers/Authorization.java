@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/auth")
 public class Authorization {
-    AuthenticationManager authenticationManager;
-    UserRepository userRepository;
-    PasswordEncoder passwordEncoder;
-    JwtUtils jwtUtils;
+    private final AuthenticationManager authenticationManager;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final JwtUtils jwtUtils;
 
     public Authorization(AuthenticationManager authenticationManager, UserRepository userRepository, PasswordEncoder passwordEncoder, JwtUtils jwtUtils) {
         this.authenticationManager = authenticationManager;

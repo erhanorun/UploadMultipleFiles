@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
-    UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public UserDetailsServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
