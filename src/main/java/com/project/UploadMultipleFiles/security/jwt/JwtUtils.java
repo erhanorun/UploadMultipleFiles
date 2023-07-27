@@ -21,7 +21,6 @@ public class JwtUtils implements Serializable {
     @Value("${jwtExpirationMs}")
     private int jwtExpirationMs;
 
-
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
     }

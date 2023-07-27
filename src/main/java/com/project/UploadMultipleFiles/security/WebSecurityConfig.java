@@ -29,7 +29,6 @@ public class WebSecurityConfig {
             "/swagger-ui.html",
             "/v2/api-docs",
             "/webjars/**"
-
     };
 
     UserDetailsServiceImpl userDetailsServiceImpl;

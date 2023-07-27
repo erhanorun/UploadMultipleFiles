@@ -14,7 +14,6 @@ import java.util.Date;
 @RequiredArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 
-
 public class FileTypeExceptionResponse extends Exception {
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
