@@ -18,11 +18,11 @@ import java.util.stream.Stream;
 @Service
 @RequiredArgsConstructor
 public class FileService implements FileServiceImplementation {
-    FileRepository fileRepository;
+    private final FileRepository fileRepository;
 
-    public FileService(FileRepository fileRepository) {
-        this.fileRepository = fileRepository;
-    }
+//    public FileService(FileRepository fileRepository) {
+//        this.fileRepository = fileRepository;
+//    }
 
     @Value(value = "${data.exception.message}")
     private String invalidMessage;

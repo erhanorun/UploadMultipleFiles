@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 @Entity
 @Data
 @RequiredArgsConstructor
-@Table(name = "user")
+@Table(name = "userdb")
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
