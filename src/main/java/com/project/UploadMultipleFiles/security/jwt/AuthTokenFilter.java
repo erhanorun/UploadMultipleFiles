@@ -26,7 +26,6 @@ public class AuthTokenFilter extends OncePerRequestFilter {
         this.userDetailsServiceImpl = userDetailsServiceImpl;
     }
 
-
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, @NonNull HttpServletResponse httpServletResponse, @NonNull FilterChain filterChain) throws ServletException, IOException {
 
